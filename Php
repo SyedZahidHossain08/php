@@ -1,0 +1,35 @@
+<?php
+class Person {
+    public $name = "John Doe";
+    public $age = 30;
+
+    public function greet() {
+        echo "Hello, my name is $this->name and I am $this->age years old.";
+    }
+}
+
+$person1 = new Person();
+echo $person1->name;
+$person1->age = 40;
+$person1->greet();
+
+
+//private variables start from here
+class Personprivate {
+    private $name = "Jane Smith";
+    private $age = 25;
+
+    public function getIntro() {
+        return "Hello, my name is $this->name.";
+    }
+
+    public function setAge($newAge) {
+        $this->age = $newAge;
+    }
+}
+
+$person2 = new Personprivate();
+echo $person2->$name;
+echo $person2->getIntro();
+$person2->setAge(35);
+echo $person2->getIntro();
